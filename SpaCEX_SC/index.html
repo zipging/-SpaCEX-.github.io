@@ -1,0 +1,809 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://zipging.github.io/-SpaCEX-.github.io/SpaCEX_SC/">
+      
+      
+        <link rel="prev" href="../SpaCEX_SVG/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Spatial clustering - SpaCEX</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="indido" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spacex-sc" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SpaCEX" class="md-header__button md-logo" aria-label="SpaCEX" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SpaCEX
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Spatial clustering
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="indido" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/WLatSunLab/SpaCEX" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SpaCEX
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SpaCEX" class="md-nav__button md-logo" aria-label="SpaCEX" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SpaCEX
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/WLatSunLab/SpaCEX" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SpaCEX
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to SpaCEX!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Preparation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preparation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    What you can do with SpaCEX
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            What you can do with SpaCEX
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpaCEX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SGEs generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpaCEX_ETC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enhancement of the transcriptomic coverage in Fish-based ST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpaCEX_SVG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SVG detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Spatial clustering
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Spatial clustering
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step1-load-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step1: Load data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step2-generate-svg-score-by-spacex-svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step2: Generate SVG score by SpaCEX-SVG
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stpe3-carry-out-spacex-sc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stpe3: Carry out SpaCEX-SC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stpe4-show-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stpe4: Show the result
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step1-load-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step1: Load data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step2-generate-svg-score-by-spacex-svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step2: Generate SVG score by SpaCEX-SVG
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stpe3-carry-out-spacex-sc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stpe3: Carry out SpaCEX-SC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stpe4-show-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stpe4: Show the result
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="spacex-sc">SpaCEX-SC</h1>
+<h2 id="step1-load-data">Step1: Load data</h2>
+<pre><code class="language-python">from sklearn.metrics.cluster import normalized_mutual_info_score
+from collections import OrderedDict
+from sklearn.metrics import adjusted_rand_score
+from SpaCEX.src.SpaCEX_SVG.utils import simu_zinb
+from SpaCEX.src.SpaCEX_SVG.utils import get_svg_score
+from SpaCEX.src.SpaCEX_SC.SpaCEX_SC import SpaCEX_SC
+from SpaCEX.src.main.SpaCEX import SpaCEX
+import matplotlib.pyplot as plt
+import pandas as pd
+import scanpy as sc
+import numpy as np
+import warnings
+warnings.filterwarnings(&quot;ignore&quot;)
+</code></pre>
+<pre><code class="language-python">## get adata and image data
+adata= SpaCEX.get_data(sample_id='151676', data_type='adata')
+dataset, adata = SpaCEX.data_process(adata)
+</code></pre>
+<pre><code>adata2image: 100%|██████████| 18639/18639 [05:27&lt;00:00, 56.85gene/s]
+</code></pre>
+<h2 id="step2-generate-svg-score-by-spacex-svg">Step2: Generate SVG score by SpaCEX-SVG</h2>
+<pre><code class="language-python">## train model with pretrained model
+y_pred, SGEs, model = SpaCEX.train(dataset=dataset, pretrain=False)
+</code></pre>
+<pre><code>use cuda: True
+load pretrained mae from SpaCEX/model_pretrained/SpaCEX.pkl
+
+
+Clustering: 100%|██████████| 30/30 [07:12&lt;00:00, 14.41s/it]
+</code></pre>
+<pre><code class="language-python">## generate SVG score
+adata.X = adata.X.todense()
+svg_score = get_svg_score(SGEs, dataset, adata, model, sim_times=10)
+</code></pre>
+<pre><code>100%|██████████| 10/10 [02:27&lt;00:00, 14.76s/it]
+</code></pre>
+<h2 id="stpe3-carry-out-spacex-sc">Stpe3: Carry out SpaCEX-SC</h2>
+<pre><code class="language-python">## get original data
+adata= SpaCEX.get_data(sample_id='151676', data_type='adata')
+</code></pre>
+<pre><code class="language-python">## select genes
+new_samples_indices = SpaCEX_SC.gene_select(cluster_labels, svg_score, selection_percentage=0.5)
+</code></pre>
+<pre><code class="language-markdown">select 9263 genes
+</code></pre>
+<pre><code class="language-python">## spatial clustering
+adata = SpaCEX_SC.spatial_clustering(adata, new_samples_indices, n_clusters=7)
+</code></pre>
+<pre><code>Calculateing adj matrix using xy only...
+Run 1: l [0.01, 1000], p [0.0, 3421.9987256815807]
+Run 2: l [0.01, 500.005], p [0.0, 3416.00732421875]
+Run 3: l [0.01, 250.0075], p [0.0, 3392.22265625]
+Run 4: l [0.01, 125.00874999999999], p [0.0, 3299.90869140625]
+Run 5: l [0.01, 62.509375], p [0.0, 2971.17138671875]
+Run 6: l [0.01, 31.2596875], p [0.0, 2097.834228515625]
+Run 7: l [0.01, 15.63484375], p [0.0, 945.4818725585938]
+Run 8: l [0.01, 7.822421875], p [0.0, 304.0054626464844]
+Run 9: l [0.01, 3.9162109375], p [0.0, 84.49016571044922]
+Run 10: l [0.01, 1.9631054687499998], p [0.0, 21.678667068481445]
+Run 11: l [0.01, 0.9865527343749999], p [0.0, 4.903018474578857]
+Run 12: l [0.01, 0.49827636718749996], p [0.0, 0.5869753360748291]
+Run 13: l [0.25413818359374996, 0.49827636718749996], p [0.0016840696334838867, 0.5869753360748291]
+Run 14: l [0.37620727539062493, 0.49827636718749996], p [0.11651778221130371, 0.5869753360748291]
+Run 15: l [0.4372418212890624, 0.49827636718749996], p [0.304052472114563, 0.5869753360748291]
+Run 16: l [0.4677590942382812, 0.49827636718749996], p [0.43444645404815674, 0.5869753360748291]
+recommended l =  0.48301773071289056
+Start at res =  0.7 step =  0.1
+Initializing cluster centers with louvain, resolution =  0.7
+
+
+2023-12-19 14:10:56.114599: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+
+
+Epoch  0
+Epoch  10
+Res =  0.7 Num of clusters =  7
+recommended res =  0.7
+Initializing cluster centers with louvain, resolution =  0.7
+Epoch  0
+Epoch  10
+Epoch  20
+Epoch  30
+Epoch  40
+Epoch  50
+Epoch  60
+Epoch  70
+Epoch  80
+Epoch  90
+Epoch  100
+Epoch  110
+Epoch  120
+Epoch  130
+Epoch  140
+Epoch  150
+Epoch  160
+Epoch  170
+Epoch  180
+Epoch  190
+Calculateing adj matrix using xy only...
+</code></pre>
+<h2 id="stpe4-show-the-result">Stpe4: Show the result</h2>
+<pre><code class="language-python">## get ground truth 
+adata.obs['Ground Truth']=adata.obs['layer_guess_reordered_short'] 
+</code></pre>
+<pre><code class="language-python">## caculate ARI and NMI
+label_pred = list(adata.obs['r_pred'])
+label_pred = np.array(label_pred).astype(int)
+
+ground_truth = list(adata.obs['Ground Truth'])
+category_to_int = {category: idx for idx, category in enumerate(set(ground_truth))}
+
+i = 0
+for key in category_to_int:
+    category_to_int[key] = i
+    i = i+1
+
+ground = [category_to_int[category] for category in ground_truth]
+
+ari = adjusted_rand_score(ground, label_pred)
+print(&quot;ARI:&quot;, ari)
+
+nmi = normalized_mutual_info_score(ground, label_pred)
+print(&quot;NMI:&quot;, nmi)
+
+</code></pre>
+<pre><code>ARI: 0.5170212162200523
+NMI: 0.6375916808656412
+</code></pre>
+<pre><code class="language-python">## plot ground truth
+domains=&quot;Ground Truth&quot;
+plot_color=[&quot;#F56867&quot;,&quot;#FEB915&quot;,&quot;#C798EE&quot;,&quot;#59BE86&quot;,&quot;#7495D3&quot;,&quot;#D1D1D1&quot;,&quot;#6D1A9C&quot;,&quot;#15821E&quot;,&quot;#3A84E6&quot;,&quot;#997273&quot;,&quot;#787878&quot;,&quot;#DB4C6C&quot;,&quot;#9E7A7A&quot;,&quot;#554236&quot;,&quot;#AF5F3C&quot;,&quot;#93796C&quot;,&quot;#F9BD3F&quot;,&quot;#DAB370&quot;,&quot;#877F6C&quot;,&quot;#268785&quot;]
+num_celltype=len(adata.obs[domains].unique())
+adata.uns[domains+&quot;_colors&quot;]=list(plot_color[:num_celltype])
+ax=sc.pl.scatter(adata,alpha=1,x=&quot;x_array&quot;,y=&quot;y_array&quot;,color=domains,title=domains,color_map=plot_color,show=False,size=100000/adata.shape[0])
+ax.set_aspect('equal', 'box')
+ax.axes.invert_yaxis()
+
+plt.show()
+</code></pre>
+<p>​  <br />
+<img alt="png" src="../output_9_0.png" />
+​    </p>
+<pre><code class="language-python">## adjust the color according to the Hungarian algorithm
+y_true = np.array(ground)
+y_pred = np.array(adata.obs['r_pred'])
+y_true = y_true.astype(np.int64)
+assert y_pred.size == y_true.size
+D = max(y_pred.max(), y_true.max()) + 1
+w = np.zeros((D, D), dtype=np.int64)
+for i in range(y_pred.size):
+    w[y_pred[i], y_true[i]] += 1
+
+from scipy.optimize import linear_sum_assignment as linear_assignment
+ind = (np.array(linear_assignment(w.max() - w))).transpose()
+adata.uns['r_pred_colors'] = np.array(adata.uns['Ground Truth_colors'])[ind[:, 1]]
+</code></pre>
+<pre><code class="language-python">## plot pred map
+domains=&quot;r_pred&quot;
+num_celltype=len(adata.obs[domains].unique())
+ax=sc.pl.scatter(adata,alpha=1,x=&quot;x_array&quot;,y=&quot;y_array&quot;,color=domains,title='pred ARI:{:.3f}'.format(ari),color_map=adata.uns['r_pred_colors'], show=False,size=100000/adata.shape[0])
+ax.set_aspect('equal', 'box')
+ax.axes.invert_yaxis()
+
+plt.show()
+</code></pre>
+<p>​  <br />
+<img alt="png" src="../output_11_0.png" />
+​    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.indexes"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
