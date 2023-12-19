@@ -2,6 +2,7 @@
 
 ```python
 from SpaCEX.src.main.SpaCEX import SpaCEX
+from sklearn.preprocessing import MinMaxScaler
 from scipy.cluster import hierarchy
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -24,7 +25,7 @@ gene_name = adata.var.index.values
  SGEs = SGEs.detach().cpu().numpy()
  ```
 
-  adata2image: 100%|██████████| 18639/18639 [05:25<00:00, 57.27gene/s]
+    adata2image: 100%|██████████| 18639/18639 [05:25<00:00, 57.27gene/s]
 
 ## Step3: Hierarchical clustering
 
