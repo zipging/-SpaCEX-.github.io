@@ -7,6 +7,7 @@ nav:
   - index.md 
   - Preparation.md
   - What you can do with SpaCEX:
+    - SGEs generation: SpaCEX.md
     - Enhancement of the transcriptomic coverage in Fish-based ST: SpaCEX_ETC.md
     - SVG detection: SpaCEX_SVG.md
     - Spatial clustering: SpaCEX_SC.md
