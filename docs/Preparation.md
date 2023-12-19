@@ -8,13 +8,8 @@ Downloading SpaCEX code from https://github.com/WLatSunLab/SpaCEX
 
 ```pytho
 git clone https://github.com/WLatSunLab/SpaCEX.git
-python setup.py build
-python setup.py install
 ```
-
-```python
-import SpaCEX
-```
+Rename SpaCEX-main as SpaCEX
 
 ## Download Data
 
