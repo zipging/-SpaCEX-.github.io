@@ -22,16 +22,19 @@ import SpaCEX
 
 You can also obtain the example data [here](https://drive.google.com/drive/folders/1C3Gk-HVYp2dQh4id8H68M9p8IWEOIut_?usp=drive_link) required for SpaCEX.and make sure these data are organized in the following structure:
 ```
--SpaCEX
-  -data
-    -151676_10xvisium.h5ad
-    -DLPFC_matrix_151676.dat
-    -mEmb
-      -10x_mEmb_matrix.dat
-      -sqf_mEmb_adata.h5ad
-      -sqf_mEmb_matrix.dat
-  -model_pretrained
-  -...
+ . <SpaCEX>
+        ├── ...
+        ├── <data>
+        │   ├── 151676_10xvisium.h5ad
+        │   ├── DLPFC_matrix_151676.dat
+        │   └── <mEmb>
+        │       ├── 10x_mEmb_matrix.dat
+        │       ├── sqf_mEmb_adata.h5ad
+        │       └── qf_mEmb_matrix.dat
+        ├── <model_pretrained>
+        │   │
+        └── ...
+
 ```
 
 ## Data in spacific task
